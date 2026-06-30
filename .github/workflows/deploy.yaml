@@ -82,7 +82,7 @@ jobs:
 
       - name: Decrypt secrets and apply to K3s
         run: |
-          sops -d --input-type dotenv config/secrets.production.enc > /tmp/.env
+          sops -d --input-type dotenv --output-type dotenv config/secrets.production.enc > /tmp/.env
           source /tmp/.env
           rm -f /tmp/.env
           kubectl create secret generic auth-db \
