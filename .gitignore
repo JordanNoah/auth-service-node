@@ -13,6 +13,10 @@ dist/
 *.pem
 keys/
 
+# secretos planos (los cifrados .enc sí se commitean)
+config/*.env
+!config/*.enc
+
 # logs
 *.log
 npm-debug.log*
